@@ -4,7 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif !important;
-    
+    max-width: 1400px;
 }
 
 /* wrap line  */
@@ -42,14 +42,74 @@ body {
 
 /* header */
 
+/* //////////////////////////////// */
+/* nav-mobile-toggle */
+/* @media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+} */
+/* nav-mobile-toggle */
+
+
 header {
-    background-image: url(./header.jpg);
-    background-position:  center  ;
-    height: 600px;
+    width: 100%;
+    height: 100vh;
     position: relative;
 }
+/* carousel */
+#back-vedio
+{
+    position: absolute;
+    top: 19%;
+    left: 0;
+    width: 100%;
+    height: 650px;
+}
+.carousel-item {
+    width: 100%;
+    height: 100vh;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    padding: 16px;
+    color: #eee !important;
+    font-size: 35px !important;
+    transition: 0.6s ease;
+    user-select: none;
+  }
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    color: #D0A34A !important; 
+ }
+
+ .pagen {
+    margin-top: -20px;
+ }
+
+/* carousel */
 .navbarr {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     height: 80px;
     display: flex;
     align-items: center;
@@ -100,17 +160,20 @@ header {
 }
 .firstlinks a:hover{
     color: #D0A34A;
+    font-weight: 500;
 }
 
 .logo img{
     width: 90px;
     height: 90px;
+    margin: 0 100px;
 }
 
 .scndlinks{
     display: flex;
     align-items: center;
     margin-top: 20px;
+    margin-right: 40px;
 }
 .scndlinks ul 
 {
@@ -130,6 +193,7 @@ header {
 }
 .scndlinks a:hover{
     color: #D0A34A;
+    font-weight: 500;
 }
 .scndlinks button {
     padding: 10px;
@@ -148,26 +212,16 @@ header {
     font-weight: 300;
 }
 
-.headtitle {
-    position: absolute;
-    top: 45%;
-    left: 35%;
-    color: white;
-}
-.headtitle h1 {
-    font-size: 50px;
-    font-weight: 400;
-}
 .headsearch {
     position: absolute;
-    bottom: -50px;
+    bottom: -180px;
     left: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     box-shadow: 2px 2px 2px 2px #eee;
-    height: 100px;
+    height: 120px;
 }
 .formdata {
     display: flex;
@@ -203,7 +257,7 @@ header {
 
 /* aboutus */
 .aboutus {
-    margin-top: 120px;
+    margin-top: 250px;
 }
 
 .about-txt h2 {
@@ -215,11 +269,6 @@ header {
     width: 100%;
     line-height: 25px;
     font-size: 13px;
-}
-
-.about-img
-{
-    margin-left: 40px;
 }
 
 .about-txt button {
@@ -238,6 +287,109 @@ header {
     color: #D0A34A;
     font-weight: 300;
 }
-
-
+.about-img img {
+    max-width: 100%;
+}
 /* aboutus */
+
+/* Projects */
+
+
+.projects{
+
+    margin-top: 120px;
+}
+.projtitle h2 
+{
+  margin-bottom: 20px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(29, 28, 28, 0.2);
+  }
+  .procontent{
+    position: relative;
+    padding: 0;
+  }
+  /* When you mouse over the container, fade in the overlay logo*/
+  .procontent:hover .overlay {
+    opacity: 1;
+    z-index: 6985;
+  }
+  
+
+  /* The logo and button inside the overlay is positioned in the middle vertically and horizontally */
+  .udouralogo , .lafayette-logo , .zaha-logo {
+    color: white;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .overlay button {
+    padding: 10px;
+    background-color: #D0A34A;
+    font-size: 12px;
+    border: none;
+    color: white;
+    font-weight: 100;
+    width: 90px;
+    margin-top: 30px;
+}
+
+  .overlay button:hover{
+    background-color: white;
+    color: #D0A34A;
+    font-weight: 300;
+}
+
+
+/* Projects */
